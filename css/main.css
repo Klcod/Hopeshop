@@ -98,213 +98,220 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-   html {
-     box-sizing: border-box;
-   } 
-   *,*:before,*:after {
-     box-sizing: inherit;
-   }
-   body {
-    background-color: #f2f2f2;
-    font-family: 'Open Sans', sans-serif; 
-  }
-  /**Globales **/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+/**Globales **/
+.contenedor {
+  width: 98%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 480px) {
   .contenedor {
-    width: 98%;
-    margin: 0 auto; 
+    width: 95%;
   }
-  @media only screen and (min-width:480px) {
-    .contenedor {
-      width: 95%;
-    }
-  }
+}
 
-  @media only screen and (min-width:768px) {
-    .contenedor {
-      width: 90%;
-    }
+@media only screen and (min-width: 768px) {
+  .contenedor {
+    width: 90%;
   }
+}
 
-  @media only screen and (min-width:992px) {
-    .contenedor {
-      width: 90%;
-      max-width: 1100px;
-    }
+@media only screen and (min-width: 992px) {
+  .contenedor {
+    width: 90%;
+    max-width: 1100px;
   }
-  .seccion {
-    padding: 30px 0;
-  }
+}
+.seccion {
+  padding: 30px 0;
+}
 
-  .seccion p {
-    font-size: 1.2em;
-    text-align: center;
-  }
+.seccion p {
+  font-size: 1.2em;
+  text-align: center;
+}
 
-  h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.4em;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  h2::after {
-    content: '';
-    margin: 0 auto;
-    background-image: url(../img/separador.png);
-    height: 30px;
-    width: 100px;
-    display: block;
-  }
-  h3 {
-    font-size: 1.8em;
-    color: #fe4918;
-    font-family: 'PT Sans', sans-serif;
-    margin: 0;
-  }
-  .button {
-    background-color: #fe4918;
-    padding: 10px 40px;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: bold; 
-    font-family: 'Oswald', sans-serif;
-    text-decoration: none;
-    font-size: 1em;
-    margin-top: 20px;
-    display: inline-block;
-    transition: all .3s ease;
-  }
-  .button:hover {
-    background-color: #e33000;
-  }
-  .float-right {
-    float: right;
-  }
-  /** Header **/
-  div.hero {
-    background-image: url(../img/encabezado.jpg);
-    height: 100vh;
-    background-position: top center;
-    background-size: cover;
-  }
+h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.4em;
+  text-transform: uppercase;
+  text-align: center;
+}
+h2::after {
+  content: "";
+  margin: 0 auto;
+  background-image: url(../img/separador.png);
+  height: 30px;
+  width: 100px;
+  display: block;
+}
+h3 {
+  font-size: 1.8em;
+  color: #fe4918;
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+}
+.button {
+  background-color: #fe4918;
+  padding: 10px 40px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  text-decoration: none;
+  font-size: 1em;
+  margin-top: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.button:hover {
+  background-color: #e33000;
+}
+.float-right {
+  float: right;
+}
+/** Header **/
+div.hero {
+  background-image: url(../img/encabezado.jpg);
+  height: 100vh;
+  background-position: top center;
+  background-size: cover;
+}
 
+div.contenido-header {
+  padding-top: 40px;
+}
+@media only screen and (min-width: 768px) {
   div.contenido-header {
-    padding-top: 40px;  
+    padding-top: 10px;
   }
-  @media only screen and (min-width:768px) {
-    div.contenido-header {
-      padding-top: 10px;  
-    }
-  }
-  nav.redes-sociales {
-    text-align: center;
-  }
-  nav.redes-sociales a {
-    color: #ffffff;
-    font-size: 2em;
-    margin-right: 20px;
-  }
-  nav.redes-sociales a:last-child {
-    margin-right: 0;
-  }
+}
+nav.redes-sociales {
+  text-align: center;
+}
+nav.redes-sociales a {
+  color: #ffffff;
+  font-size: 2em;
+  margin-right: 20px;
+}
+nav.redes-sociales a:last-child {
+  margin-right: 0;
+}
+div.informacion-evento {
+  text-align: center;
+  color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
   div.informacion-evento {
-    text-align: center;
-    color: #ffffff;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
   }
-  @media only screen and (min-width:768px) {
-    div.informacion-evento {
-      width: 70%;
-      margin: 0 auto;
-      margin-top: 50px;;
-    }
-  }
-  div.informacion-evento p {
+}
+div.informacion-evento p {
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+div.informacion-evento p i {
+  color: #fe4918;
+  font-size: 2.4rem;
+}
+p.fecha {
+  float: left;
+}
+p.ciudad {
+  float: right;
+  text-align: right;
+}
+p.slogan {
+  text-transform: none !important;
+}
+p.slogan span {
+  font-weight: bold;
+}
+h1.nombre-sitio {
+  font-size: 5.9vw;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+}
+@media only screen and (min-width: 768px) {
+  h1.nombre-sitio {
+    font-size: 11.5vw;
     margin: 0;
-    display: inline;
-    font-size: 20px;
-    text-transform: uppercase;
+    line-height: 1;
   }
-  div.informacion-evento p i {
-    color: #fe4918;
-    font-size: 2.4rem;
+}
+
+/**Barra*/
+div.barra {
+  background-color: #353535;
+  padding: 20px 0;
+}
+div.logo {
+  width: 80%;
+  float: left;
+}
+div.logo img {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  div.logo {
+    width: 33%;
   }
-  p.fecha {
-    float: left;
-  }
-  p.ciudad {
+}
+
+/** Nav principal **/
+nav.navegacion-principal {
+  display: none;
+}
+nav.navegacion-principal a {
+  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.6s ease;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+nav.navegacion-principal a:hover {
+  background-color: #fe4918;
+}
+nav.navegacion-principal a:last-child {
+  border: 2px solid #fe4918;
+  color: #fe4918;
+}
+nav.navegacion-principal a:last-child:hover {
+  color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  nav.navegacion-principal {
+    width: 67%;
     float: right;
     text-align: right;
-  }
-  p.slogan {
-    text-transform: none!important;
-  }
-  p.slogan span {
-    font-weight: bold;
-  }
-  h1.nombre-sitio {
-    font-size: 5.9vw;
-    text-transform: uppercase;
-    font-family: 'PT Sans', sans-serif;
-  }
-  @media only screen and (min-width:768px) { 
-    h1.nombre-sitio {
-      font-size: 11.5vw;
-      margin: 0;
-      line-height: 1;
-    }
-  }
-
-  /**Barra*/
-  div.barra {
-    background-color: #353535;
-    padding: 20px 0;
-  }
-  div.logo {
-    width: 80%;
-    float: left;
-  }
-  div.logo img {
-    width: 100%;
-  }
-  @media only screen and (min-width:768px) {
-    div.logo {
-      width: 33%;
-    }
-  }
-
-  /** Nav principal **/
-  nav.navegacion-principal {
-    display: none;
-  }
-  nav.navegacion-principal a {
-    font-family: 'Oswald', sans-serif;
-    color: #ffffff;
-    font-size: 1.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all .6s ease;
-    width: 100%;
     display: block;
-    text-align: center;
-    margin-bottom: 20px;
   }
-  nav.navegacion-principal a:hover {
-    background-color: #fe4918;
-  }
-  nav.navegacion-principal a:last-child {
-    border: 2px solid #fe4918;
-    color: #fe4918;
-  }
-  nav.navegacion-principal a:last-child:hover {
-    color: #ffffff;
-  }
-  @media only screen and (min-width:768px) {
-    nav.navegacion-principal {
-      width: 67%;
-      float: right;
-      text-align: right;
-      display: block;
-    }
-     
+
   nav.navegacion-principal a {
     padding: 10px 10px;
     display: inline-block;
@@ -315,31 +322,31 @@ textarea {
   }
 }
 
-  /**Menu movil**/
-  div.menu-movil {
-    width: 60px;
-    display: block;
-    float: right;
-    text-align: right;
-    margin-top: 12px;
-  }
+/**Menu movil**/
+div.menu-movil {
+  width: 60px;
+  display: block;
+  float: right;
+  text-align: right;
+  margin-top: 12px;
+}
 
-  div.menu-movil:hover {
-    cursor: pointer;
+div.menu-movil:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  div.menu-movil {
+    display: none;
   }
-  @media only screen and (min-width:768px) {
-   div.menu-movil {
-     display: none;
-   }
-  }
-  div.menu-movil span {
-    height: 8px;
-    margin-bottom: 6px;
-    background-color: white;
-    display: block;
-  }
-  
-  /** Talleres **/
+}
+div.menu-movil span {
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: white;
+  display: block;
+}
+
+/** Talleres **/
 section.programa {
   position: relative;
 }
@@ -354,17 +361,17 @@ div.contenido-programa {
   height: 100%;
   width: 100%;
 }
-div.programa-evento{
-  background-color: rgba(255, 255, 255, .8); 
+div.programa-evento {
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 15px;
   margin-top: 80px;
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
   div.programa-evento {
     width: 70%;
   }
 }
-@media only screen and (min-width:992px){
+@media only screen and (min-width: 992px) {
   div.programa-evento {
     width: 50%;
   }
@@ -374,7 +381,7 @@ nav.menu-programa {
   border-bottom: 1px solid #fe4918;
   padding-bottom: 10px;
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
   nav.menu-programa {
     display: table;
   }
@@ -384,14 +391,14 @@ nav.menu-programa a {
   text-align: center;
   color: #000000;
   text-decoration: none;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
   nav.menu-programa a {
     display: table-cell;
-}
+  }
 }
 nav.menu-programa a i,
 div.detalle-evento p i {
@@ -405,13 +412,71 @@ div.detalle-evento {
   border-bottom: 1px solid black;
   padding: 0 20px;
 }
-div.detalle-evento:nth-child(2){
+div.detalle-evento:nth-child(2) {
   border: none;
 }
 div.detalle-evento p {
   margin-bottom: 20px;
   font-size: 20px;
 }
+
+/*Invitados*/
+
+ul.lista-invitados li {
+  padding: 10px;
+  float: left;
+}
+
+@media only screen and (min-width: 480px) {
+  ul.lista-invitados li {
+      width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ul.lista-invitados li {
+      width: 33.3%;
+  }
+}
+
+div.invitado{
+  position: relative;
+  overflow: hidden;
+}
+div.invitado img {
+  max-width: 100%;
+  filter: gray;
+  -webkit-filter:grayscale(1) ;
+  -webkit-transition: all .5s ease-in-out;
+}
+div.invitado:hover img{
+  -webkit-filter:grayscale(0) ;
+  -webkit-transform: scale(1);
+}
+
+div.invitado p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px 10px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  text-align: left;
+  font-family: "Oswald", sans-serif;
+  color: #fe4918;
+  text-transform: uppercase;
+  -webkit-transition: all .5s ease-in-out;
+
+}
+
+div.invitado:hover p {
+
+  bottom: -80px;
+  opacity: 0;
+
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -506,10 +571,7 @@ div.detalle-evento p {
   /* Style adjustments for viewports that meet the condition */
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -577,4 +639,3 @@ div.detalle-evento p {
     page-break-after: avoid;
   }
 }
-
