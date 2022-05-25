@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -12,8 +13,8 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -24,32 +25,40 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
+  <!-- Add your site or application content here -->
+
   <header class="site-header">
     <div class="hero">
       <div class="contenido-header">
         <nav class="redes-sociales">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa-brands fa-instragram" aria-hidden="true"></i></a>
         </nav>
         <div class="informacion-evento">
-          <p class="fecha"><i class="fa-solid fa-calendar-days"></i>10-12 Dic</p>
-          <p class="ciudad"><i class="fa-solid fa-location-dot"></i>Guadalajara, MX</p>
+          <div class="clearfix"> 
+            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
+            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Guadalajara, MX</p>
+          </div>
+
           <h1 class="nombre-sitio">GdlWebCamp</h1>
-          <p class="slogan">La mejor conferencia de <span>diseño web</span> </p>
+          <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
         </div>
-        <!--Informacion evento-->
+        <!--.informacion-evento-->
+
       </div>
     </div>
-    <!--hero-->
+    <!--.hero-->
   </header>
 
   <div class="barra">
-    <div class="contenedor">
+    <div class="contenedor clearfix">
       <div class="logo">
-        <img src="img/logo.svg" alt="logo gldwebcamp">
+        <a href="index.html">
+          <img src="img/logo.svg" alt="logo gdlwebcamp">
+        </a>
       </div>
 
       <div class="menu-movil">
@@ -59,126 +68,341 @@
       </div>
 
       <nav class="navegacion-principal clearfix">
-        <a href="#">Conferencia</a>
-        <a href="#">Calendario</a>
-        <a href="#">Invitados</a>
-        <a href="#">Reservaciones</a>
+        <a href="conferencia.html">Conferencia</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="invitados.html">Invitados</a>
+        <a href="registro.html">Reservaciones</a>
       </nav>
     </div>
-    <!---contenedor-->
+    <!--.contenedor-->
   </div>
-  <!---Barra-->
-
+  <!--.barra-->
   <section class="seccion contenedor">
     <h2>La mejor conferencia de diseño web en español</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar mi urna, sit amet placerat nunc molestie id.
-      Etiam eget sodales ex, sit amet finibus quam. Vivamus vitae urna sit amet dolor venenatis egestas.
-      Sed congue arcu auctor mauris lobortis, at consectetur elit interdum.
+      Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum
+      finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus
+      mi
+      at ex blandit vehicula.
+      Morbi porttitor tempus euismod.
     </p>
   </section>
-
-
+  <!--seccion-->
   <section class="programa">
     <div class="contenedor-video">
-      <video autoplay loop poster="bg-talleres.jpg">
-        <source src="video/video.mp4" type="video/mp4">
-        <source src="video/video.webm" type="video/webm">
-        <source src="video/video.ogv" type="video/ogg">
-      </video>
+      <img src="img/encabezado.jpg" type="image" >
     </div>
+    <!-- <div class="contenedor-video">
+      <video autoplay loop poster="bg-talleres.jpg">
+        <source src="video.ogv" type="video/mp4">
+        <source src="video.mp4" type="video/webm">
+        <source src="video.webm" type="video/ogv">
+      </video>
+    </div> -->
     <!--.contenedor-video-->
     <div class="contenido-programa">
       <div class="contenedor">
         <div class="programa-evento">
           <h2>Programa del Evento</h2>
+
           <nav class="menu-programa">
-            <a href="#talleres"><i class="fa fa-code" aria-hidden="true"></i> Talleres</a>
-            <a href="#conferencias"><i class="fa fa-comment" aria-hidden="true"></i> Conferencias</a>
-            <a href="#seminarios"><i class="fa fa-university" aria-hidden="true"></i> Seminarios</a>
+            <a href="#talleres">
+              <i class="fa fa-code" aria-hidden="true"></i> Talleres </a>
+            <a href="#conferencias">
+              <i class="fa fa-comment" aria-hidden="true"></i> Conferencias </a>
+            <a href="#seminario">
+              <i class="fa fa-university" aria-hidden="true"></i> Seminario </a>
           </nav>
+
 
           <div id="talleres" class="info-curso ocultar clearfix">
             <div class="detalle-evento">
-              <h3>HTML5, CSS3 y JavaScript</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i>Victor Pat</p>
+              <h3>HTML5, CSS3 Y JAVASCRIPT</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00:00</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Victor Pat</p>
             </div>
             <div class="detalle-evento">
-              <h3>Responsive Web Design</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i>Victor Pat</p>
+              <h3>Responsive Web Desing</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00:00</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Victor Pat</p>
             </div>
-            <a href="#" class="button float-right">Ver todos</a>
+            <a href="calendario.html" class="button float-right">Ver todos</a>
           </div>
           <!--#talleres-->
+
         </div>
         <!--.programa-evento-->
       </div>
       <!--.contenedor-->
     </div>
     <!--.contenido-programa-->
-
   </section>
-  <!--programa-->
+  <!--.programa-->
+
+
+
   <section class="invitados contenedor seccion">
+    <h2>Nuestros Invitados</h2>
+    <ul class="lista-invitados clearfix">
+      <li>
+        <div class="invitado">
+          <a class="invitado-info" href="#invitado1">
+            <img src="img/invitado1.jpg" alt="Imagen invitado">
+            <p>Rafael Bautista</p>
+          </a>
+        </div>
+        <!-- END .invitado -->
+      </li>
 
-    <h2>Nuestros invitados</h2>
-    <ul class="lista-invitados clearflix">
+      <div style="display:none;">
+
+        <div class="invitado-info" id="invitado1">
+          <h2>Rafael </h2>
+          <img src="img/invitado1.jpg" alt="">
+          <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
+            bibendum finibus massa non molestie.</p>
+        </div>
+
+      </div>
+
+
       <li>
         <div class="invitado">
-          <img src="img/invitado1.jpg" alt="imagen invitado">
-          <p>Rafael Bautista</p>
+          <a class="invitado-info" href="#invitado2">
+            <img src="img/invitado2.jpg" alt="Imagen invitado">
+            <p>Shari Herrera</p>
+          </a>
         </div>
+        <!-- END .invitado -->
       </li>
+
+      <div style="display:none;">
+
+        <div class="invitado-info" id="invitado2">
+          <h2>Shari</h2>
+          <img src="img/invitado2.jpg" alt="">
+          <p>Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit
+            vehicula. Morbi porttitor tempus euismod.</p>
+        </div>
+
+      </div>
+
+
       <li>
         <div class="invitado">
-          <img src="img/invitado2.jpg" alt="imagen invitado">
-          <p>Shari Herrera</p>
+          <a class="invitado-info" href="#invitado3">
+            <img src="img/invitado3.jpg" alt="Imagen invitado">
+            <p>Juan Sanchez</p>
+          </a>
         </div>
+        <!-- END .invitado -->
       </li>
+
+      <div style="display:none;">
+
+        <div class="invitado-info" id="invitado3">
+          <h2>Juan</h2>
+          <img src="img/invitado3.jpg" alt="">
+          <p>placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor
+            tempus euismod.</p>
+        </div>
+
+      </div>
+
+
       <li>
         <div class="invitado">
-          <img src="img/invitado3.jpg" alt="imagen invitado">
-          <p>Georgio Sanchez</p>
+          <a class="invitado-info" href="#invitado4">
+            <img src="img/invitado4.jpg" alt="Imagen invitado">
+            <p>Susana Rivera</p>
+          </a>
         </div>
+        <!-- END .invitado -->
       </li>
+
+      <div style="display:none;">
+
+        <div class="invitado-info" id="invitado4">
+          <h2>Susana</h2>
+          <img src="img/invitado4.jpg" alt="">
+          <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
+            bibendum finibus</p>
+        </div>
+
+      </div>
+
+
       <li>
         <div class="invitado">
-          <img src="img/invitado4.jpg" alt="imagen invitado">
-          <p>Susana Rivera</p>
+          <a class="invitado-info" href="#invitado5">
+            <img src="img/invitado5.jpg" alt="Imagen invitado">
+            <p>Harold Garcia</p>
+          </a>
         </div>
+        <!-- END .invitado -->
       </li>
+
+      <div style="display:none;">
+
+        <div class="invitado-info" id="invitado5">
+          <h2>Harold</h2>
+          <img src="img/invitado5.jpg" alt="">
+          <p>placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor
+            tempus euismod.</p>
+        </div>
+
+      </div>
+
+
       <li>
         <div class="invitado">
-          <img src="img/invitado5.jpg" alt="imagen invitado">
-          <p>Harold Garcia</p>
+          <a class="invitado-info" href="#invitado6">
+            <img src="img/invitado6.jpg" alt="Imagen invitado">
+            <p>Susan Sanchez</p>
+          </a>
         </div>
+        <!-- END .invitado -->
       </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado6.jpg" alt="imagen invitado">
-          <p>Susana Sanchez</p>
+
+      <div style="display:none;">
+
+        <div class="invitado-info" id="invitado6">
+          <h2>Susan</h2>
+          <img src="img/invitado6.jpg" alt="">
+          <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
+            bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci.
+            Maecenas luctus mi at
+            ex blandit vehicula. Morbi porttitor tempus euismod.</p>
         </div>
-      </li>
+
+      </div>
+
+
     </ul>
-
+    <!-- END lista-invitados -->
   </section>
-  <!--.newsletter-->
-  <section class="seccion">
-    <h2>Faltan</h2>
-    <div class="cuenta-regresiva contenedor">
-      <ul class="clearfix">
-        <li><p id="dias" class="numero">80</p> días</li>
-        <li><p id="horas" class="numero">15</p> horas</li>
-        <li><p id="minutos" class="numero">5</p> minutos</li>
-        <li><p id="segundos" class="numero">30</p> segundos</li>
+  <!-- END .invitados -->
+
+
+
+
+  <div class="contador parallax">
+    <div class="contenedor">
+      <ul class="resumen-evento clearfix">
+        <li>
+          <p class="numero">6</p> Invitados
+        </li>
+        <li>
+          <p class="numero">15</p> Talleres
+        </li>
+        <li>
+          <p class="numero">3</p> Días
+        </li>
+        <li>
+          <p class="numero">9</p> Conferencias
+        </li>
+
       </ul>
     </div>
+  </div>
+
+  <section class="precios seccion">
+    <h2>Precios</h2>
+    <div class="contenedor">
+      <ul class="lista-precios clearfix"> 
+      <li>
+        <div class="tabla-precio">
+            <h3>Pase por día</h3>
+            <p class="numero">$30</p>
+          <ul>
+            <li>Bocadillos Gratis</li>
+            <li>Todas las conferencias</li>
+            <li>Todos los talleres</li>	
+          </ul>
+        <a href="#" class="button hollow">Comprar</a>
+        </div>
+      </li>
+    
+        <li>
+        <div class="tabla-precio">
+          <h3>Todos los días</h3>
+          <p class="numero">$50</p>
+          <ul>
+          <li>Bocadillos Gratis</li>
+          <li>Todas las conferencias</li>
+          <li>Todos los talleres</li>	
+          </ul>
+        <a href="#" class="button">Comprar</a>
+        </div>
+      </li>
+    
+        <li>
+        <div class="tabla-precio">
+          <h3>Pase por 2 días</h3>
+          <p class="numero">$45</p>
+          <ul>
+          <li>Bocadillos Gratis</li>
+          <li>Todas las conferencias</li>
+          <li>Todos los talleres</li>	
+          </ul>
+        <a href="#" class="button hollow">Comprar</a>
+        </div>
+      </li>		
+        
+      </ul>
+    </div>
+    </section>
+    
+    <div id="mapa" class="mapa"></div>
+
+    <section class="seccion">
+      <h2>Testimoniales</h2>
+      <div class="testimoniales contenedor clearfix">
+          <div class="testimonial">
+              <blockquote>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eum fuga earum quas suscipit assumenda ratione tempora consequatur provident, ducimus similique exercitationem saepe tempore numquam non commodi impedit neque cum.</p>
+                  <footer class="info-testimonial clearfix">
+                      <img src="img/testimonial.jpg" alt="imagen testimonial">
+                      <cite>Oswaldo Aponte Escobedo <span>Diseñador en @prisma</span></cite>
+                  </footer>
+              </blockquote>
+          </div><!--.testimonial-->
+          <div class="testimonial">
+              <blockquote>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eum fuga earum quas suscipit assumenda ratione tempora consequatur provident, ducimus similique exercitationem saepe tempore numquam non commodi impedit neque cum.</p>
+                  <footer class="info-testimonial clearfix">
+                      <img src="img/testimonial.jpg" alt="imagen testimonial">
+                      <cite>Oswaldo Aponte Escobedo <span>Diseñador en @prisma</span></cite>
+                  </footer>
+              </blockquote>
+          </div><!--.testimonial-->
+          <div class="testimonial">
+              <blockquote>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eum fuga earum quas suscipit assumenda ratione tempora consequatur provident, ducimus similique exercitationem saepe tempore numquam non commodi impedit neque cum.</p>
+                  <footer class="info-testimonial clearfix">
+                      <img src="img/testimonial.jpg" alt="imagen testimonial">
+                      <cite>Oswaldo Aponte Escobedo <span>Diseñador en @prisma</span></cite>
+                  </footer>
+              </blockquote>
+          </div><!--.testimonial-->
+      </div>
   </section>
 
+    <!--.newsletter-->
+
+    <section class="seccion">
+      <h2>Faltan</h2>
+      <div class="cuenta-regresiva contenedor">
+        <ul class="clearfix">
+          <li><p id="dias" class="numero">80</p> días</li>
+          <li><p id="horas" class="numero">15</p> horas</li>
+          <li><p id="minutos" class="numero">5</p> minutos</li>
+          <li><p id="segundos" class="numero">30</p> segundos</li>
+        </ul>
+      </div>
+    </section>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
