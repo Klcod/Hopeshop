@@ -1,9 +1,8 @@
 (function () {
     "use strict";
-
+    
     var regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function () {
-
         //Campos Datos usuario
         var nombre = document.getElementById('nombre');
         var apellido = document.getElementById('apellido');
@@ -59,7 +58,6 @@
                 errorDiv.style.border = '1px solid red';
             }
         }
-
 
         function calcularMontos(event) {
             event.preventDefault();
@@ -125,6 +123,22 @@
     }); //DOM CONTENT LOADED
 })();
 
+
+$(function(){
+    //Programa de Conferencias
+    $('.programa-evento .info-curso:first').show();
+    $('.menu-programa a:first').addClass('activo');
+
+    $('.menu-programa a').on('click', function(){
+    $('.menu-programa a').removeClass('activo');
+    $(this).addClass('activo');
+    $('.ocultar').hide();
+    var enlace = $(this).attr('href');
+    $(enlace).fadeIn(1000);
+    return false;
+});
+
+});    
 
 
 
