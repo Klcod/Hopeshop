@@ -24,8 +24,12 @@
         var camisas = document.getElementById('camisa_evento');
         var etiquetas = document.getElementById('etiquetas');
 
+        
+        if(document.getElementById('calcular')) {
+	
 
         calcular.addEventListener('click', calcularMontos);
+
         pase_dia.addEventListener('blur', mostrarDias);
         pase_dosdias.addEventListener('blur', mostrarDias);
         pase_completo.addEventListener('blur', mostrarDias);
@@ -85,7 +89,7 @@
                     listadoProductos.push(boletosCompleto + ' Pases Completos');
                 }
                 if (cantCamisas >= 1) {
-                    listadoProductos.push(cantCamisas + ' Casmisas');
+                    listadoProductos.push(cantCamisas + ' Camisas');
                 }
                 if (cantEtiquetas >= 1) {
                     listadoProductos.push(cantEtiquetas + ' Etiquetas');
@@ -120,11 +124,37 @@
             }
         }
 
+    }
+
     }); //DOM CONTENT LOADED
 })();
 
 
 $(function(){
+
+    // Lettering
+    $('.nombre-sitio').lettering();
+
+    //Menu fijo
+    var windowHeight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+    $(window).scroll(function() {
+	    var scroll = $(window).scrollTop();
+	    if(scroll > windowHeight) {
+		    $('.barra').addClass('fixed');
+		    $('body').css({'margin-top': barraAltura+'px'});
+	    } else {
+		    $('.barra').removeClass('fixed');
+		    $('body').css({'margin-top': '0px'});
+	    }
+    });
+
+    // Menu Responsive
+    $('.menu-movil').on('click', function() {
+	    $('.navegacion-principal').slideToggle();
+    });
+
+
     //Programa de Conferencias
     $('.programa-evento .info-curso:first').show();
     $('.menu-programa a:first').addClass('activo');
@@ -138,8 +168,19 @@ $(function(){
     return false;
 });
 
-});    
+     //Animaciones para los números
+     $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6}, 1200);
+     $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15}, 1200);
+     $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3}, 1500);
+     $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9}, 1500);
 
 
+    // Cuenta Regresiva
 
-
+    $('.cuenta-regresiva').countdown('2022/08/26 09:00:00', function(event) {
+        $('#dias').html(event.strftime('%D'));
+        $('#horas').html(event.strftime('%H'));
+        $('#minutos').html(event.strftime('%M'));
+        $('#segundos').html(event.strftime('%S'));
+      });
+}); 
