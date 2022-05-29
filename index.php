@@ -1,93 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
-  <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <!-- Add your site or application content here -->
-
-  <header class="site-header">
-    <div class="hero">
-      <div class="contenido-header">
-        <nav class="redes-sociales">
-          <a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa-brands fa-instragram" aria-hidden="true"></i></a>
-        </nav>
-        <div class="informacion-evento">
-          <div class="clearfix"> 
-            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
-            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Guadalajara, MX</p>
-          </div>
-
-          <h1 class="nombre-sitio">GdlWebCamp</h1>
-          <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
-        </div>
-        <!--.informacion-evento-->
-
-      </div>
-    </div>
-    <!--.hero-->
-  </header>
-
-  <div class="barra">
-    <div class="contenedor clearfix">
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/logo.svg" alt="logo gdlwebcamp">
-        </a>
-      </div>
-
-      <div class="menu-movil">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="navegacion-principal clearfix">
-        <a href="conferencia.html">Conferencia</a>
-        <a href="calendario.html">Calendario</a>
-        <a href="invitados.html">Invitados</a>
-        <a href="registro.html">Reservaciones</a>
-      </nav>
-    </div>
-    <!--.contenedor-->
-  </div>
-  <!--.barra-->
+<?php include_once 'includes/templates/header.php';?>
   <section class="seccion contenedor">
     <h2>La mejor conferencia de diseño web en español</h2>
     <p>
-      Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum
-      finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus
-      mi
-      at ex blandit vehicula.
-      Morbi porttitor tempus euismod.
+      Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
     </p>
-  </section>
-  <!--seccion-->
+  </section><!--seccion-->
   <section class="programa">
     <div class="slider">
       <ul>
@@ -101,16 +18,11 @@
       <div class="contenedor">
         <div class="programa-evento">
           <h2>Programa del Evento</h2>
-
           <nav class="menu-programa">
-            <a href="#talleres">
-              <i class="fa fa-code" aria-hidden="true"></i> Talleres </a>
-            <a href="#conferencias">
-              <i class="fa fa-comment" aria-hidden="true"></i> Conferencias </a>
-            <a href="#seminarios">
-              <i class="fa fa-university" aria-hidden="true"></i> Seminario </a>
+            <a href="#talleres"><i class="fa fa-code" aria-hidden="true"></i> Talleres </a>
+            <a href="#conferencias"><i class="fa fa-comment" aria-hidden="true"></i> Conferencias </a>
+            <a href="#seminarios"><i class="fa fa-university" aria-hidden="true"></i> Seminario </a>
           </nav>
-
 
           <div id="talleres" class="info-curso ocultar clearfix">
             <div class="detalle-evento">
@@ -248,9 +160,7 @@
           <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
             bibendum finibus</p>
         </div>
-
       </div>
-
 
       <li>
         <div class="invitado">
@@ -262,16 +172,13 @@
       </li>
 
       <div style="display:none;">
-
         <div class="invitado-info" id="invitado5">
           <h2>Harold</h2>
           <img src="img/invitado5.jpg" alt="">
           <p>placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor
             tempus euismod.</p>
         </div>
-
       </div>
-
 
       <li>
         <div class="invitado">
@@ -283,7 +190,6 @@
       </li>
 
       <div style="display:none;">
-
         <div class="invitado-info" id="invitado6">
           <h2>Susan</h2>
           <img src="img/invitado6.jpg" alt="">
@@ -292,32 +198,17 @@
             Maecenas luctus mi at
             ex blandit vehicula. Morbi porttitor tempus euismod.</p>
         </div>
-
       </div>
-
-
     </ul><!-- END lista-invitados -->
   </section><!-- END .invitados -->
-
-
-
 
   <div class="contador parallax">
     <div class="contenedor">
       <ul class="resumen-evento clearfix">
-        <li>
-          <p class="numero">6</p> Invitados
-        </li>
-        <li>
-          <p class="numero">15</p> Talleres
-        </li>
-        <li>
-          <p class="numero">3</p> Días
-        </li>
-        <li>
-          <p class="numero">9</p> Conferencias
-        </li>
-
+        <li><p class="numero"></p> Invitados</li>
+        <li><p class="numero"></p> Talleres</li>
+        <li><p class="numero"></p> Días</li>
+        <li><p class="numero"></p> Conferencias</li>
       </ul>
     </div>
   </div>
@@ -402,37 +293,27 @@
               </blockquote>
           </div><!--.testimonial-->
       </div>
-  </section>
+  </section> 
 
-    <!--.newsletter-->
+  <!--.newsletter-->
+  <div class="newsletter parallax">
+    <div class="contenido contenedor">
+      <p> regístrate al newsletter:</p>
+      <h3>gdlwebcamp</h3>
+      <a href="registro.html" class="button transparente">Registro</a>
+    </div>
+  </div>
 
-    <section class="seccion">
-      <h2>Faltan</h2>
-      <div class="cuenta-regresiva contenedor">
-        <ul class="clearfix">
-          <li><p id="dias" class="numero">80</p> días</li>
-          <li><p id="horas" class="numero">15</p> horas</li>
-          <li><p id="minutos" class="numero">5</p> minutos</li>
-          <li><p id="segundos" class="numero">30</p> segundos</li>
-        </ul>
-      </div>
-    </section>
-
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-  <script src="js/mapa.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
-</html>
+<!-- .Cuenta regresiva -->
+<section class="seccion">
+  <h2>Faltan</h2>
+  <div class="cuenta-regresiva contenedor">
+    <ul class="clearfix">
+      <li><p id="dias" class="numero"></p> días</li>
+      <li><p id="horas" class="numero"></p> horas</li>
+      <li><p id="minutos" class="numero"></p> minutos</li>
+      <li><p id="segundos" class="numero"></p> segundos</li>
+    </ul>
+  </div>
+</section>
+<?php include_once 'includes/templates/footer.php';?>
