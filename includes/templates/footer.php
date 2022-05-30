@@ -37,7 +37,17 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/jquery.countdown.min.js"></script>
   <script src="js/jquery.lettering.js"></script>
-  <script src="js/lightbox.js"></script>
+
+  <?php 
+   $archivo = basename($_SERVER['PHP_SELF']);
+   $pagina = str_replace(".php", "", $archivo);
+   if($pagina == 'invitados' || $pagina == 'index') {
+      echo '<script src="js/jquery.colorbox-min.js"></script>';
+ } else if($pagina == 'conferencia') {
+      echo '<script src="js/lightbox.js"></script>';
+ }
+?>
+
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
   <script src="js/mapa.js"></script>
   <script src="js/main.js"></script>

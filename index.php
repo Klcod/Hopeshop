@@ -14,61 +14,93 @@
         <li><img src="slider/slider4.jpg" alt=""></li>
       </ul>
     </div> <!--.slider-->
+
     <div class="contenido-programa">
       <div class="contenedor">
         <div class="programa-evento">
           <h2>Programa del Evento</h2>
+
+          <?php
+      try{
+        require_once('includes/funciones/bd_conexion.php');
+        $sql = "SELECT * FROM `categoria_evento` ";
+        $resultado = $conn->query($sql);
+      } catch (Exception $e){
+          echo $e->getMessage();
+      }
+      ?>
           <nav class="menu-programa">
-            <a href="#talleres"><i class="fa fa-code" aria-hidden="true"></i> Talleres </a>
-            <a href="#conferencias"><i class="fa fa-comment" aria-hidden="true"></i> Conferencias </a>
-            <a href="#seminarios"><i class="fa fa-university" aria-hidden="true"></i> Seminario </a>
+            <?php while($cat = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+              <?php $categoria = $cat['cat_evento']; ?>
+            <a href="#<?php echo strtolower($categoria) ?>">
+            <i class="fa <?php echo $cat['icono'] ?>" aria-hidden="true"></i> <?php echo $categoria ?>
+            </a>
+            <?php } ?>         
           </nav>
 
-          <div id="talleres" class="info-curso ocultar clearfix">
-            <div class="detalle-evento">
-              <h3>HTML5, CSS3 Y JAVASCRIPT</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Victor Pat</p>
-            </div>
-            <div class="detalle-evento">
-              <h3>Responsive Web Desing</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Victor Pat</p>
-            </div>
-            <a href="#" class="button float-right">Ver todos</a>
-          </div><!--#talleres-->
-          <div id="conferencias" class="info-curso ocultar clearfix">
-            <div class="detalle-evento">
-              <h3>Como ser freelancer</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Gregorio Sanchéz</p>
-            </div>
-            <div class="detalle-evento">
-              <h3>Tecnologías del Futuro</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Susan Sanchéz</p>
-            </div>
-            <a href="#" class="button float-right">Ver todos</a>
-          </div><!--#talleres-->
-          <div id="seminarios" class="info-curso ocultar clearfix">
-            <div class="detalle-evento">
-              <h3>Diseño UI/UX para móviles</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i>Harold García</p>
-            </div>
-            <div class="detalle-evento">
-              <h3>Aprende a programar en una mañana</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Susana Rivera</p>
-            </div>
-            <a href="#" class="button float-right">Ver todos</a>
-          </div><!--#talleres-->
+            <?php
+      try{
+        require_once('includes/funciones/bd_conexion.php');
+        $sql = " SELECT `evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `cat_evento`, `icono`, `nombre_invitado`, `apellido_invitado` ";
+        $sql .= " FROM `eventos` ";
+        $sql .= " INNER JOIN `categoria_evento` ";
+        $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+        $sql .= " INNER JOIN `invitados` ";
+        $sql .= " ON eventos.id_inv = invitados.invitado_id";
+        $sql .= " AND eventos.id_cat_evento = 1";
+        $sql .= " ORDER BY `evento_id` LIMIT 2;";
+        $sql .= " SELECT `evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `cat_evento`, `icono`, `nombre_invitado`, `apellido_invitado` ";
+        $sql .= " FROM `eventos` ";
+        $sql .= " INNER JOIN `categoria_evento` ";
+        $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+        $sql .= " INNER JOIN `invitados` ";
+        $sql .= " ON eventos.id_inv = invitados.invitado_id";
+        $sql .= " AND eventos.id_cat_evento = 2";
+        $sql .= " ORDER BY `evento_id` LIMIT 2;";
+        $sql .= " SELECT `evento_id`, `nombre_evento`, `fecha_evento`, `hora_evento`, `cat_evento`, `icono`, `nombre_invitado`, `apellido_invitado` ";
+        $sql .= " FROM `eventos` ";
+        $sql .= " INNER JOIN `categoria_evento` ";
+        $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+        $sql .= " INNER JOIN `invitados` ";
+        $sql .= " ON eventos.id_inv = invitados.invitado_id";
+        $sql .= " AND eventos.id_cat_evento = 3";
+        $sql .= " ORDER BY `evento_id` LIMIT 2;";
+      } catch (Exception $e){
+          $error = $e->getMessage();
+      }
+      ?>
+
+      <?php $conn->multi_query($sql); ?>
+
+      <?php
+      do {
+        $resultado = $conn->store_result();
+        $row = $resultado->fetch_all(MYSQLI_ASSOC); ?>
+
+        <?php $i = 0; ?>
+        <?php foreach($row as $evento): ?>
+          <?php if($i % 2 == 0) { ?>
+        <div id="<?php echo strtolower($evento['cat_evento'])?>" class="info-curso ocultar clearfix">
+        <?php } ?>
+        <div class="detalle-evento">
+          <h3><?php echo utf8_encode($evento['nombre_evento']) ?></h3>
+          <p><i class="fa fa-clock" aria-hidden="true"></i> <?php echo $evento['hora_evento']; ?></p>
+          <p><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo $evento['fecha_evento']; ?></p>
+          <p><i class="fa fa-user" aria-hidden="true"></i> <?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado']; ?></p>
+        </div>
+        <?php if($i % 2 == 1): ?> 
+        <a href="calendario.php" class="button float-right">Ver todos</a>
+      </div><!--#talleres-->
+      <?php endif; ?>
+      <?php $i++; ?>
+      <?php endforeach; ?>
+      <?php $resultado->free(); ?>
+      <?php } while ($conn->more_results() && $conn->next_result());
+ 
+ 
+ ?>
+
+
 
         </div><!--.programa-evento-->
       </div><!--.contenedor-->
@@ -76,132 +108,8 @@
   </section><!--.programa-->
 
 
-
-  <section class="invitados contenedor seccion">
-    <h2>Nuestros Invitados</h2>
-    <ul class="lista-invitados clearfix">
-      <li>
-        <div class="invitado">
-          <a class="invitado-info" href="#invitado1">
-            <img src="img/invitado1.jpg" alt="Imagen invitado">
-            <p>Rafael Bautista</p>
-          </a>
-        </div><!-- END .invitado -->
-      </li>
-
-      <div style="display:none;">
-
-        <div class="invitado-info" id="invitado1">
-          <h2>Rafael </h2>
-          <img src="img/invitado1.jpg" alt="">
-          <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
-            bibendum finibus massa non molestie.</p>
-        </div>
-
-      </div>
-
-
-      <li>
-        <div class="invitado">
-          <a class="invitado-info" href="#invitado2">
-            <img src="img/invitado2.jpg" alt="Imagen invitado">
-            <p>Shari Herrera</p>
-          </a>
-        </div><!-- END .invitado -->
-      </li>
-
-      <div style="display:none;">
-
-        <div class="invitado-info" id="invitado2">
-          <h2>Shari</h2>
-          <img src="img/invitado2.jpg" alt="">
-          <p>Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit
-            vehicula. Morbi porttitor tempus euismod.</p>
-        </div>
-
-      </div>
-
-
-      <li>
-        <div class="invitado">
-          <a class="invitado-info" href="#invitado3">
-            <img src="img/invitado3.jpg" alt="Imagen invitado">
-            <p>Juan Sanchez</p>
-          </a>
-        </div><!-- END .invitado -->
-      </li>
-
-      <div style="display:none;">
-
-        <div class="invitado-info" id="invitado3">
-          <h2>Juan</h2>
-          <img src="img/invitado3.jpg" alt="">
-          <p>placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor
-            tempus euismod.</p>
-        </div>
-
-      </div>
-
-
-      <li>
-        <div class="invitado">
-          <a class="invitado-info" href="#invitado4">
-            <img src="img/invitado4.jpg" alt="Imagen invitado">
-            <p>Susana Rivera</p>
-          </a>
-        </div><!-- END .invitado -->
-      </li>
-
-      <div style="display:none;">
-
-        <div class="invitado-info" id="invitado4">
-          <h2>Susana</h2>
-          <img src="img/invitado4.jpg" alt="">
-          <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
-            bibendum finibus</p>
-        </div>
-      </div>
-
-      <li>
-        <div class="invitado">
-          <a class="invitado-info" href="#invitado5">
-            <img src="img/invitado5.jpg" alt="Imagen invitado">
-            <p>Harold Garcia</p>
-          </a>
-        </div><!-- END .invitado -->
-      </li>
-
-      <div style="display:none;">
-        <div class="invitado-info" id="invitado5">
-          <h2>Harold</h2>
-          <img src="img/invitado5.jpg" alt="">
-          <p>placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor
-            tempus euismod.</p>
-        </div>
-      </div>
-
-      <li>
-        <div class="invitado">
-          <a class="invitado-info" href="#invitado6">
-            <img src="img/invitado6.jpg" alt="Imagen invitado">
-            <p>Susan Sanchez</p>
-          </a>
-        </div><!-- END .invitado -->
-      </li>
-
-      <div style="display:none;">
-        <div class="invitado-info" id="invitado6">
-          <h2>Susan</h2>
-          <img src="img/invitado6.jpg" alt="">
-          <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut
-            bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci.
-            Maecenas luctus mi at
-            ex blandit vehicula. Morbi porttitor tempus euismod.</p>
-        </div>
-      </div>
-    </ul><!-- END lista-invitados -->
-  </section><!-- END .invitados -->
-
+  <?php include_once 'includes/templates/invitados.php'; ?>  
+  
   <div class="contador parallax">
     <div class="contenedor">
       <ul class="resumen-evento clearfix">
@@ -300,7 +208,7 @@
     <div class="contenido contenedor">
       <p> regístrate al newsletter:</p>
       <h3>gdlwebcamp</h3>
-      <a href="registro.html" class="button transparente">Registro</a>
+      <a href="registro.php" class="button transparente">Registro</a>
     </div>
   </div>
 
