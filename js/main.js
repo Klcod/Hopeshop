@@ -24,8 +24,12 @@
         var camisas = document.getElementById('camisa_evento');
         var etiquetas = document.getElementById('etiquetas');
 
+        
+        if(document.getElementById('calcular')) {
+	
 
         calcular.addEventListener('click', calcularMontos);
+
         pase_dia.addEventListener('blur', mostrarDias);
         pase_dosdias.addEventListener('blur', mostrarDias);
         pase_completo.addEventListener('blur', mostrarDias);
@@ -85,7 +89,7 @@
                     listadoProductos.push(boletosCompleto + ' Pases Completos');
                 }
                 if (cantCamisas >= 1) {
-                    listadoProductos.push(cantCamisas + ' Casmisas');
+                    listadoProductos.push(cantCamisas + ' Camisas');
                 }
                 if (cantEtiquetas >= 1) {
                     listadoProductos.push(cantEtiquetas + ' Etiquetas');
@@ -120,6 +124,8 @@
             }
         }
 
+    }
+
     }); //DOM CONTENT LOADED
 })();
 
@@ -128,6 +134,30 @@ $(function(){
 
     // Lettering
     $('.nombre-sitio').lettering();
+
+    // Agregar clase a Menú
+    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+
+    //Menu fijo
+    var windowHeight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+    $(window).scroll(function() {
+	    var scroll = $(window).scrollTop();
+	    if(scroll > windowHeight) {
+		    $('.barra').addClass('fixed');
+		    $('body').css({'margin-top': barraAltura+'px'});
+	    } else {
+		    $('.barra').removeClass('fixed');
+		    $('body').css({'margin-top': '0px'});
+	    }
+    });
+
+    // Menu Responsive
+    $('.menu-movil').on('click', function() {
+	    $('.navegacion-principal').slideToggle();
+    });
 
 
     //Programa de Conferencias
@@ -143,11 +173,11 @@ $(function(){
     return false;
 });
 
-    // Animaciones para los Numeros
-    $('.resumen-evento li:nth-child(1) p').animateNumber( { number: 6}, 1200);
-    $('.resumen-evento li:nth-child(2) p').animateNumber( { number: 15}, 1200);
-    $('.resumen-evento li:nth-child(3) p').animateNumber( { number: 3}, 1500);
-    $('.resumen-evento li:nth-child(4) p').animateNumber( { number: 9}, 1500);
+     //Animaciones para los números
+     $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6}, 1200);
+     $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15}, 1200);
+     $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3}, 1500);
+     $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9}, 1500);
 
 
     // Cuenta Regresiva
@@ -158,8 +188,7 @@ $(function(){
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
       });
-});    
 
-
-
-
+      // Colorbox
+    $('.invitado-info').colorbox({inline:true, width:"50%"});
+}); 

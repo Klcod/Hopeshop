@@ -12,14 +12,24 @@
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
+
+  <?php 
+   $archivo = basename($_SERVER['PHP_SELF']);
+   $pagina = str_replace(".php", "", $archivo);
+   if($pagina == 'invitados' || $pagina == 'index') {
+      echo '<link rel="stylesheet" href="css/colorbox.css">';
+ } else if($pagina == 'conferencia') {
+      echo '<link rel="stylesheet" href="css/lightbox.css">';
+ }
+?>
+  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
   <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/lightbox.css">
   <link rel="stylesheet" href="css/main.css">
   <meta name="theme-color" content="#fafafa">
-
 </head>
-<body>
+
+<body class="<?php echo $pagina; ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -44,18 +54,19 @@
 
           <h1 class="nombre-sitio">GdlWebCamp</h1>
           <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
-        </div> <!--.informacion-evento-->
+        </div><!--.informacion-evento-->
+
       </div>
-    </div> <!--.hero-->
+    </div><!--.hero-->
   </header>
 
   <div class="barra">
     <div class="contenedor clearfix">
       <div class="logo">
-        <a href="index.html">
+          <a href="index.php">
           <img src="img/logo.svg" alt="logo gdlwebcamp">
-        </a>
-      </div>
+          </a>
+        </div>
 
       <div class="menu-movil">
         <span></span>
@@ -64,47 +75,10 @@
       </div>
 
       <nav class="navegacion-principal clearfix">
-        <a href="conferencia.html">Conferencia</a>
-        <a href="calendario.html">Calendario</a>
-        <a href="invitados.html">Invitados</a>
-        <a href="registro.html">Reservaciones</a>
+        <a href="conferencia.php">Conferencia</a>
+        <a href="calendario.php">Calendario</a>
+        <a href="invitados.php">Invitados</a>
+        <a href="registro.php">Reservaciones</a>
       </nav>
     </div> <!--.contenedor-->
   </div> <!--.barra-->
-
-  <section class="seccion contenedor">
-    <h2>La mejor conferencia de diseño web en español</h2>
-    <p>
-      Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum
-      finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus
-      mi
-      at ex blandit vehicula.
-      Morbi porttitor tempus euismod.
-    </p>
-  </section> <!--seccion-->
-
-    <section class="seccion">
-      <h2>Galería de fotos</h2>
-    </section>
-
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.lettering.js"></script>
-  <script src="js/lightbox.js"></script>
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-  <script src="js/mapa.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-</html>
