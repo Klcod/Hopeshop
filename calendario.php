@@ -81,12 +81,12 @@
          
 
           
-      </div> 
+      </div>
 
       <?php
          $conn->close();
         ?>
 
   </section>
-
-<?php include_once 'includes/templates/footer.php'; ?> 
+  
+<?php include_once 'includes/templates/footer.php'; ?>
