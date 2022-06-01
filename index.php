@@ -83,9 +83,9 @@
         <div id="<?php echo strtolower($evento['cat_evento'])?>" class="info-curso ocultar clearfix">
         <?php } ?>
         <div class="detalle-evento">
-          <h3><?php echo utf8_encode($evento['nombre_evento']) ?></h3>
+          <h3><?php echo $evento['nombre_evento'] ?></h3>
           <p><i class="fa fa-clock" aria-hidden="true"></i> <?php echo $evento['hora_evento']; ?></p>
-          <p><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo $evento['fecha_evento']; ?></p>
+          <p><i class="fa fa-calendar-alt" aria-hidden="true"></i> <?php echo $evento['fecha_evento']; ?></p>
           <p><i class="fa fa-user" aria-hidden="true"></i> <?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado']; ?></p>
         </div>
         <?php if($i % 2 == 1): ?> 
@@ -113,10 +113,10 @@
   <div class="contador parallax">
     <div class="contenedor">
       <ul class="resumen-evento clearfix">
-        <li><p class="numero"></p> Invitados</li>
-        <li><p class="numero"></p> Talleres</li>
-        <li><p class="numero"></p> Días</li>
-        <li><p class="numero"></p> Conferencias</li>
+        <li><p class="numero">0</p> Invitados</li>
+        <li><p class="numero">0</p> Talleres</li>
+        <li><p class="numero">0</p> Días</li>
+        <li><p class="numero">0</p> Conferencias</li>
       </ul>
     </div>
   </div>
@@ -208,7 +208,7 @@
     <div class="contenido contenedor">
       <p> regístrate al newsletter:</p>
       <h3>gdlwebcamp</h3>
-      <a href="registro.php" class="button transparente">Registro</a>
+      <a href="#mc_embed_signup" class="boton_newsletter button transparente">Registro</a>
     </div>
   </div>
 

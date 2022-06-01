@@ -24,6 +24,7 @@
         var camisas = document.getElementById('camisa_evento');
         var etiquetas = document.getElementById('etiquetas');
 
+        botonRegistro.disabled = true;
         
         if(document.getElementById('calcular')) {
 	
@@ -100,6 +101,9 @@
                     lista_productos.innerHTML += listadoProductos[i] + '<br/>';
                 }
                 suma.innerHTML = "$ " + totalPagar.toFixed(2);
+
+                botonRegistro.disabled = false;
+                document.getElementById('total_pedido').value = totalPagar;   
             }
         }
 
@@ -173,11 +177,18 @@ $(function(){
     return false;
 });
 
-     //Animaciones para los números
-     $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6}, 1200);
-     $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15}, 1200);
-     $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3}, 1500);
-     $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9}, 1500);
+//Animaciones para los números
+var resumenLista = jQuery('.resumen-evento');
+if(resumenLista.length > 0 ) { 
+    $('.resumen-evento').waypoint(function() {
+       $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6}, 1200);
+       $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15}, 1200);
+       $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3}, 1500);
+       $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9}, 1500);
+    },  {
+       offset: '60%'
+    });
+   }
 
 
     // Cuenta Regresiva
@@ -191,4 +202,5 @@ $(function(){
 
       // Colorbox
     $('.invitado-info').colorbox({inline:true, width:"50%"});
+    $('.boton_newsletter').colorbox({inline:true, width:"50%"});
 }); 

@@ -44,12 +44,12 @@
           <a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
           <a href="#"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
           <a href="#"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa-brands fa-instragram" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
         </nav>
         <div class="informacion-evento">
           <div class="clearfix"> 
-            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
-            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Guadalajara, MX</p>
+            <p class="fecha"><i class="fa fa-calendar-alt" aria-hidden="true"></i> 10-12 Dic</p>
+            <p class="ciudad"><i class="fa fa-solid fa fa-location-dot" aria-hidden="true"></i> Quintana Roo, MX</p>
           </div>
 
           <h1 class="nombre-sitio">GdlWebCamp</h1>
